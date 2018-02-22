@@ -87,22 +87,8 @@ class CommandHandler(Handler):
 
     """
 
-    def __init__(self,
-                 command,
-                 callback,
-                 filters=None,
-                 allow_edited=False,
-                 pass_args=False,
-                 pass_update_queue=False,
-                 pass_job_queue=False,
-                 pass_user_data=False,
-                 pass_chat_data=False):
-        super(CommandHandler, self).__init__(
-            callback,
-            pass_update_queue=pass_update_queue,
-            pass_job_queue=pass_job_queue,
-            pass_user_data=pass_user_data,
-            pass_chat_data=pass_chat_data)
+    def __init__(self, command, callback, filters=None, allow_edited=False, pass_args=False, pass_update_queue=False, pass_job_queue=False, pass_user_data=False, pass_chat_data=False):
+        super(CommandHandler, self).__init__(callback,pass_update_queue=pass_update_queue,pass_job_queue=pass_job_queue,pass_user_data=pass_user_data,pass_chat_data=pass_chat_data)
 
         if isinstance(command, string_types):
             self.command = [command.lower()]
@@ -173,3 +159,11 @@ class CommandHandler(Handler):
             optional_args['args'] = message.text.split()[1:]
 
         return self.callback(dispatcher.bot, update, **optional_args)
+
+
+    def new_method(self):
+        return "Hi there"
+
+
+
+    
