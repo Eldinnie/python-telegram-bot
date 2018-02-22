@@ -99,7 +99,7 @@ class CommandHandler(Handler):
             self.command = [command.lower()]
         else:
             self.command = [x.lower() for x in command]
-        self.filters=filters
+        self.filters = filters
         self.allow_edited = allow_edited
         self.pass_args = pass_args
         if self.command == self.command:
