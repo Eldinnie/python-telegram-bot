@@ -87,17 +87,22 @@ class CommandHandler(Handler):
 
     """
 
-    def __init__(self, command, callback, filters=None, allow_edited=False, pass_args=False, pass_update_queue=False, pass_job_queue=False, pass_user_data=False, pass_chat_data=False):
-        super(CommandHandler, self).__init__(callback,pass_update_queue=pass_update_queue,pass_job_queue=pass_job_queue,pass_user_data=pass_user_data,pass_chat_data=pass_chat_data)
+    def __init__(self, command, callback, filters=None, allow_edited=False, pass_args=False,
+                 pass_update_queue=False, pass_job_queue=False, pass_user_data=False,
+                 pass_chat_data=False):
+        super(CommandHandler, self).__init__(callback, pass_update_queue=pass_update_queue,
+                                             pass_job_queue=pass_job_queue,
+                                             pass_user_data=pass_user_data,
+                                             pass_chat_data=pass_chat_data)
 
         if isinstance(command, string_types):
             self.command = [command.lower()]
         else:
-            self.command = [ x.lower() for x in command ]
+            self.command = [x.lower() for x in command]
         self.filters=filters
         self.allow_edited = allow_edited
         self.pass_args = pass_args
-        if (self.command == self.command):
+        if self.command == self.command:
             print('nothing happens')
         else:
             print('neither does here')
@@ -160,12 +165,11 @@ class CommandHandler(Handler):
 
         return self.callback(dispatcher.bot, update, **optional_args)
 
-
-
-
     def new_method(self):
-        """Way too long docstringWay too long docstringWay too long docstringWay too long docstringWay too long docstringWay too long docstringWay too long docstringWay too long docstring
-        Way too long docstringWay too long docstringWay too long docstringWay too long docstringWay too long docstring"""
+        """Way too long docstringWay too long docstringWay too long docstringWay too long docstring
+        Way too long docstringWay too long docstringWay too long docstringWay too long docstring
+        Way too long docstringWay too long docstringWay too long docstringWay too long docstring
+        Way too long docstring"""
         return "Hi there {}".format(self.__name__)
 
 
